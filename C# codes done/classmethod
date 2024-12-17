@@ -1,0 +1,63 @@
+using System;
+
+namespace ClassMethodApp
+{
+    // Static class, meaning it cannot be instantiated and all members are static
+    public static class MathOperations
+    {
+        // Void method: Takes an integer, divides it by 2, and outputs the result
+        public static void DivideByTwo(int number)
+        {
+            int result = number / 2; // Divide the number by 2
+            Console.WriteLine($"The result of {number} divided by 2 is: {result}"); // Output the result to the console
+        }
+
+        // Overloaded method: Also takes two integers, divides both by 2, and outputs the results
+        public static void DivideByTwo(int number1, int number2)
+        {
+            int result1 = number1 / 2;
+            int result2 = number2 / 2;
+            Console.WriteLine($"The result of {number1} divided by 2 is: {result1}"); 
+            Console.WriteLine($"The result of {number2} divided by 2 is: {result2}");
+        }
+
+        // Method with output parameters: Returns the result of division as an output parameter
+        public static void DivideByTwoWithOutput(int number, out int result)
+        {
+            result = number / 2; // Divide the number by 2 and assign it to the result
+        }
+    }
+}
+
+using System;
+
+namespace ClassMethodApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Ask the user to input a number
+            Console.WriteLine("Enter a number to divide by 2: ");
+            int userInput = int.Parse(Console.ReadLine()); // Convert the input to an integer
+
+            // Call the void method to divide the number by 2 and display the result
+            MathOperations.DivideByTwo(userInput); // Passing the user input to the method
+
+            // Call the overloaded method: Ask the user to input a second number
+            Console.WriteLine("\nEnter another number to divide by 2: ");
+            int secondInput = int.Parse(Console.ReadLine()); // Convert the second input to an integer
+
+            // Call the overloaded method to divide both numbers by 2
+            MathOperations.DivideByTwo(userInput, secondInput); // Pass two numbers to the overloaded method
+
+            // Use the method with output parameter: Output the result to a new variable
+            MathOperations.DivideByTwoWithOutput(userInput, out int result);
+            Console.WriteLine($"\nThe result of {userInput} divided by 2 using output parameter is: {result}");
+
+            // Wait for the user to press Enter before closing the console window
+            Console.WriteLine("\nPress Enter to exit...");
+            Console.ReadLine();
+        }
+    }
+}
