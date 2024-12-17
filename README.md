@@ -1,11 +1,11 @@
-# C# Programming Projects
+# C# Fareed's Programming Projects
 
 This repository contains the work completed during my C# programming course. The projects cover a variety of topics and demonstrate my skills and knowledge gained in the course.
 
 ## Projects Overview
 
-1. **Project Name:** (e.g., To-Do List App)
-   - **Technologies Used:** C#, .NET Core, Entity Framework, SQL
+1. **Main Method assignment:** 
+   - This code was done in C# and includes techs like creating a class defining it and putting it in a console app.
    - **Description:** A simple to-do list application to manage tasks. Users can create, update, and delete tasks.
    - **Challenges:** Implemented CRUD operations and data persistence with a database.
    - **GitHub Repo:** [Link to Repo](#)
