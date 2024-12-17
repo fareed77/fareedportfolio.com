@@ -1,0 +1,122 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Step 1: A one-dimensional array of strings.
+        string[] myArray = { "Apple", "Banana", "Cherry", "Date", "Elderberry" };
+
+        // Step 2: Ask the user to input some text.
+        Console.WriteLine("Please enter some text to append to each fruit name:");
+        string userInput = Console.ReadLine();
+
+        // Step 3: A loop that iterates through each string in the array and adds the user's text to the end of each string.
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            myArray[i] = myArray[i] + userInput;  // Appending user input to each string in the array
+        }
+
+        // Step 4: A second loop that prints off each string in the array one at a time.
+        Console.WriteLine("\nUpdated list of fruits:");
+        foreach (var fruit in myArray)
+        {
+            Console.WriteLine(fruit);
+        }
+
+        // Infinite Loop Section
+        // Step 5: Infinite loop example
+        // An infinite loop is created here:
+        // Uncomment the next lines to test the infinite loop and fix it later.
+        //while (true)
+        //{
+        //    Console.WriteLine("This is an infinite loop.");
+        //}
+
+        // Fixing the infinite loop by adding a condition to break it.
+        // Step 6: Fix the infinite loop
+        Console.WriteLine("Starting a fixed loop:");
+        int counter = 0;
+        while (counter < 5)
+        {
+            Console.WriteLine("This loop will run 5 times.");
+            counter++;
+        }
+
+        // Step 7: A loop where the comparison is '<' operator
+        Console.WriteLine("\nLoop using '<' operator:");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine($"Iteration {i}");
+        }
+
+        // Step 8: A loop where the comparison is '<=' operator
+        Console.WriteLine("\nLoop using '<=' operator:");
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine($"Iteration {i}");
+        }
+
+        // Step 9: A list of strings with unique items and user search functionality
+        List<string> uniqueList = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry" };
+        Console.WriteLine("\nPlease enter some text to search for in the list:");
+        string searchText = Console.ReadLine();
+
+        bool found = false;
+        for (int i = 0; i < uniqueList.Count; i++)
+        {
+            if (uniqueList[i].Contains(searchText))
+            {
+                Console.WriteLine($"Found '{searchText}' at index {i}.");
+                found = true;
+                break;  // Stops the loop after the first match
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("Your input is not on the list.");
+        }
+
+        // Step 10: A list of strings with duplicate items
+        List<string> duplicateList = new List<string> { "Apple", "Banana", "Apple", "Date", "Elderberry" };
+        Console.WriteLine("\nPlease enter some text to search for in the list (duplicates allowed):");
+        string duplicateSearchText = Console.ReadLine();
+
+        bool matchFound = false;
+        for (int i = 0; i < duplicateList.Count; i++)
+        {
+            if (duplicateList[i] == duplicateSearchText)
+            {
+                Console.WriteLine($"Found '{duplicateSearchText}' at index {i}.");
+                matchFound = true;
+            }
+        }
+
+        if (!matchFound)
+        {
+            Console.WriteLine("Your input is not on the list.");
+        }
+
+        // Step 11: For each loop to display unique or duplicate status
+        Console.WriteLine("\nEvaluating unique vs. duplicate items in the list:");
+        HashSet<string> seenItems = new HashSet<string>();
+        foreach (var item in duplicateList)
+        {
+            if (seenItems.Contains(item))
+            {
+                Console.WriteLine($"{item} - this item is a duplicate");
+            }
+            else
+            {
+                Console.WriteLine($"{item} - this item is unique");
+                seenItems.Add(item);  // Mark this item as seen
+            }
+        }
+
+        // End of the program
+        Console.WriteLine("\nProgram has finished. Press any key to exit.");
+        Console.ReadKey();
+    }
+}
