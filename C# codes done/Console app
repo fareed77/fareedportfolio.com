@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: One-dimensional Array of strings
+        string[] stringArray = { "Apple", "Banana", "Cherry", "Date", "Elderberry" };
+        
+        // Ask the user to select an index
+        Console.WriteLine("Part 1: Enter an index to retrieve a string from the array:");
+        try
+        {
+            int stringIndex = int.Parse(Console.ReadLine());
+            
+            // Display the string at the selected index
+            Console.WriteLine($"String at index {stringIndex}: {stringArray[stringIndex]}");
+        }
+        catch (IndexOutOfRangeException)
+        {
+            // Display an error message if the index is out of bounds
+            Console.WriteLine("Error: Index out of range.");
+        }
+        catch (FormatException)
+        {
+            // Handle invalid input
+            Console.WriteLine("Error: Please enter a valid integer.");
+        }
+
+        // Part 2: One-dimensional Array of integers
+        int[] intArray = { 10, 20, 30, 40, 50 };
+        
+        // Ask the user to select an index
+        Console.WriteLine("Part 2: Enter an index to retrieve an integer from the array:");
+        try
+        {
+            int intIndex = int.Parse(Console.ReadLine());
+            
+            // Display the integer at the selected index
+            Console.WriteLine($"Integer at index {intIndex}: {intArray[intIndex]}");
+        }
+        catch (IndexOutOfRangeException)
+        {
+            // Display an error message if the index is out of bounds
+            Console.WriteLine("Error: Index out of range.");
+        }
+        catch (FormatException)
+        {
+            // Handle invalid input
+            Console.WriteLine("Error: Please enter a valid integer.");
+        }
+
+        // Part 3: List of strings
+        List<string> stringList = new List<string> { "Red", "Green", "Blue", "Yellow", "Purple" };
+        
+        // Ask the user to select an index
+        Console.WriteLine("Part 3: Enter an index to retrieve a string from the list:");
+        try
+        {
+            int listIndex = int.Parse(Console.ReadLine());
+            
+            // Display the string at the selected index
+            Console.WriteLine($"String at index {listIndex}: {stringList[listIndex]}");
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            // Display an error message if the index is out of bounds
+            Console.WriteLine("Error: Index out of range.");
+        }
+        catch (FormatException)
+        {
+            // Handle invalid input
+            Console.WriteLine("Error: Please enter a valid integer.");
+        }
+
+        // End of the program
+        Console.WriteLine("Program has ended. Press any key to exit.");
+        Console.ReadKey();
+    }
+}
