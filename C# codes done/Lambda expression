@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic; // Required for using List<T>
+
+namespace EmployeeListExample
+{
+    // Employee class definition with properties Id, FirstName, and LastName
+    public class Employee
+    {
+        public int Id { get; set; }  // Employee Id property
+        public string FirstName { get; set; }  // Employee First Name property
+        public string LastName { get; set; }  // Employee Last Name property
+
+        // Constructor to initialize the Employee object
+        public Employee(int id, string firstName, string lastName)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 2: Create a list of 10 employees
+            List<Employee> employees = new List<Employee>()
+            {
+                new Employee(1, "Joe", "Smith"),
+                new Employee(2, "Jane", "Doe"),
+                new Employee(3, "Joe", "Johnson"),
+                new Employee(4, "Alice", "Brown"),
+                new Employee(5, "Bob", "Davis"),
+                new Employee(6, "Charlie", "Miller"),
+                new Employee(7, "David", "Wilson"),
+                new Employee(8, "Eve", "Moore"),
+                new Employee(9, "Frank", "Taylor"),
+                new Employee(10, "Grace", "Anderson")
+            };
+
+            // Step 3: Using a foreach loop to create a list of employees with FirstName "Joe"
+            List<Employee> employeesNamedJoe = new List<Employee>();
+            foreach (Employee emp in employees)
+            {
+                if (emp.FirstName == "Joe") // Check if the FirstName is "Joe"
+                {
+                    employeesNamedJoe.Add(emp); // Add the employee to the new list
+                }
+            }
+
+            // Display employees with the FirstName "Joe"
+            Console.WriteLine("Employees with FirstName 'Joe' using foreach loop:");
+            foreach (Employee emp in employeesNamedJoe)
+            {
+                Console.WriteLine($"Id: {emp.Id}, Name: {emp.FirstName} {emp.LastName}");
+            }
+
+            // Step 4: Using a lambda expression to filter employees with FirstName "Joe"
+            List<Employee> employeesNamedJoeLambda = employees.FindAll(emp => emp.FirstName == "Joe");
+
+            // Display employees with the FirstName "Joe" using lambda expression
+            Console.WriteLine("\nEmployees with FirstName 'Joe' using lambda expression:");
+            foreach (Employee emp in employeesNamedJoeLambda)
+            {
+                Console.WriteLine($"Id: {emp.Id}, Name: {emp.FirstName} {emp.LastName}");
+            }
+
+            // Step 5: Using a lambda expression to filter employees with Id greater than 5
+            List<Employee> employeesIdGreaterThanFive = employees.FindAll(emp => emp.Id > 5);
+
+            // Display employees with Id greater than 5
+            Console.WriteLine("\nEmployees with Id greater than 5 using lambda expression:");
+            foreach (Employee emp in employeesIdGreaterThanFive)
+            {
+                Console.WriteLine($"Id: {emp.Id}, Name: {emp.FirstName} {emp.LastName}");
+            }
+
+            // Wait for user input before closing the console
+            Console.ReadLine();
+        }
+    }
+}
