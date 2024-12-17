@@ -1,0 +1,70 @@
+// Namespace declaration
+using System;
+
+namespace ConsoleApp
+{
+    // Define the Employee class
+    public class Employee
+    {
+        // Properties of the Employee class
+        public int Id { get; set; } // Unique identifier for the employee
+        public string FirstName { get; set; } // Employee's first name
+        public string LastName { get; set; } // Employee's last name
+
+        // Overload the '==' operator to compare Employee objects by their Id property
+        public static bool operator ==(Employee emp1, Employee emp2)
+        {
+            // Check if both objects are null or if one is null
+            if (ReferenceEquals(emp1, null) && ReferenceEquals(emp2, null)) return true;
+            if (ReferenceEquals(emp1, null) || ReferenceEquals(emp2, null)) return false;
+
+            // Compare the Id properties of the two Employee objects
+            return emp1.Id == emp2.Id;
+        }
+
+        // Overload the '!=' operator to complement the '==' operator
+        public static bool operator !=(Employee emp1, Employee emp2)
+        {
+            return !(emp1 == emp2);
+        }
+
+        // Override the Equals method to maintain consistency with the overloaded operators
+        public override bool Equals(object obj)
+        {
+            if (obj is Employee otherEmployee)
+            {
+                return this.Id == otherEmployee.Id;
+            }
+            return false;
+        }
+
+        // Override the GetHashCode method to ensure it is consistent with Equals
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+    }
+
+    // Main program
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instantiate the first Employee object and assign values to its properties
+            Employee employee1 = new Employee { Id = 1, FirstName = "John", LastName = "Doe" };
+
+            // Instantiate the second Employee object and assign values to its properties
+            Employee employee2 = new Employee { Id = 2, FirstName = "Jane", LastName = "Smith" };
+
+            // Compare the two Employee objects using the overloaded '==' operator
+            bool areEqual = employee1 == employee2;
+
+            // Display the result of the comparison
+            Console.WriteLine($"Are employee1 and employee2 equal? {areEqual}");
+
+            // Keep the console window open until the user presses a key
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
