@@ -1,0 +1,49 @@
+using System;
+
+namespace ConstructorChainingApp
+{
+    // Class definition
+    class Person
+    {
+        // Properties of the Person class
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        // Default constructor (no parameters)
+        public Person()
+        {
+            Console.WriteLine("Default constructor called.");
+        }
+
+        // Parameterized constructor (with two parameters)
+        public Person(string firstName, string lastName) : this()  // Constructor chaining
+        {
+            // Chaining the default constructor by using 'this()' to call it first
+            FirstName = firstName;  // Initialize FirstName property
+            LastName = lastName;    // Initialize LastName property
+            Console.WriteLine($"Parameterized constructor called with values: {firstName} {lastName}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 1: Create a const variable
+            const double PI = 3.14159;  // PI is a constant with a fixed value
+            Console.WriteLine("The value of PI is: " + PI);
+
+            // Step 2: Create a variable using the keyword "var"
+            var today = DateTime.Now;  // Implicitly infers the type DateTime
+            Console.WriteLine("Today's date is: " + today.ToString());
+
+            // Step 3: Chain two constructors together
+
+            // Creating an instance of Person and passing values to the parameterized constructor
+            Person person1 = new Person("John", "Doe");
+
+            // Keep the console open until the user presses a key
+            Console.ReadLine();
+        }
+    }
+}
