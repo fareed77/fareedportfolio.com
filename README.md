@@ -7,17 +7,17 @@ This repository contains the work completed during my C# programming course. The
 1. **Main Method assignment:** 
    - This code was done in C# and includes techs like creating a class defining it and putting it in a console app.
    - Making a class and putting three methods in it that perform math operations in integers, decimals and strings. When it completes it the operation will show the math results. The code is structured in a way that it handles different types of inputs and gives the correct result for each. The comments in the code explain what each part does, making it easy to understand and modify.
-   - **GitHub Repo:** [Link Text](https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/273ffb1125f21bfc675308dda76368fe20453ec6/Main%20method)
+   - **GitHub Repository:** [Take Me](https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/273ffb1125f21bfc675308dda76368fe20453ec6/Main%20method)
 
-2. **Project Name:** (e.g., Calculator App)
-   - **Technologies Used:** C#, Windows Forms
-   - **Description:** A basic calculator application built using Windows Forms to practice GUI development.
-   - **GitHub Repo:** [Link to Repo](#)
+2. **Operators Console App:** 
+   - This work was also done in C#
+   - I first created a console app and created an employee class and gave it an Id, first name and last name. It overloads the == and != operators to compare Employee objects based on their Id properties, meaning two employees are considered equal if their Ids match. The equals method is overridden and gethashcode is overridden in the end to compare two employees if they are equal based on their id.
+   - **GitHub Repository:** [Take Me](https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/393a0f857187c2f3ddbb757975ea93d5f720f475/operators)
 
 3. **Project Name:** (e.g., Bank Account Management System)
    - **Technologies Used:** C#, OOP principles
    - **Description:** An application that simulates basic bank account operations like deposit, withdrawal, and balance inquiry using object-oriented programming principles.
-   - **GitHub Repo:** [Link to Repo](#)
+   - **GitHub Repository:** [Take Me]
 
 ## Technical Skills Gained
 
