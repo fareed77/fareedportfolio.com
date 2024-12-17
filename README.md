@@ -11,30 +11,22 @@ This repository contains the work completed during my C# programming course. The
 
 2. **Operators Console App:** 
    - This work was also done in C#
-   - I first created a console app and created an employee class and gave it an Id, first name and last name. It overloads the == and != operators to compare Employee objects based on their Id properties, meaning two employees are considered equal if their Ids match. The equals method is overridden and gethashcode is overridden in the end to compare two employees if they are equal based on their id.
+   - I first created a console app and created an employee class and gave it an Id, first name and last name. It overloads the == and != operators to compare Employee objects based on their Id properties, meaning two employees are considered equal if their Ids match. The equals method is overridden and gethashcode is overridden in the end to compare two employees if they are equal based on their id. This code has the comments that makes it easy to understand and learn the code.
    - **GitHub Repository:** [Take Me](https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/393a0f857187c2f3ddbb757975ea93d5f720f475/operators)
 
-3. **Project Name:** (e.g., Bank Account Management System)
-   - **Technologies Used:** C#, OOP principles
-   - **Description:** An application that simulates basic bank account operations like deposit, withdrawal, and balance inquiry using object-oriented programming principles.
-   - **GitHub Repository:** [Take Me]
+3. **Lambda Expression:** 
+   - A Lambda Expression done in C#
+   - Creating an employee class with an id, first name and last name. A constructor to initialize these properties. In the Main method, it creates a list of 10 employees. The code then demonstrates two ways to filter and display employees from the list based on certain conditions. First it uses the foreach loop to find the employees with a first name joe and then it uses the lambda expression to achieve the same result the name joe and those with an id greater than 5. The filtered employees are shown with their id and full name. This program has all the comments to direct someone fully on how it works. 
+   - **GitHub Repository:** [Take Me](https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/273ffb1125f21bfc675308dda76368fe20453ec6/Lambda%20expression)
 
 ## Technical Skills Gained
 
 - **C# Programming:** Writing and optimizing code in C# for various applications.
 - **Object-Oriented Programming (OOP):** Mastering OOP concepts such as inheritance, polymorphism, and encapsulation.
 - **.NET Framework:** Experience with .NET for building applications.
-- **Debugging and Testing:** Using debugging tools to identify and fix issues in code.
-- **Version Control:** Using Git for managing and sharing code.
-
-## Future Work
-
-- Continue to improve coding practices and learn advanced C# concepts.
-- Plan to build more complex applications, including web applications and APIs.
 
 Feel free to contact me for more information or collaboration opportunities.
 
 ## Contact
 
-- [LinkedIn](#)
-- [Email](#)# fareedportfolio.com
+- [fareedcanada@gmail.com](#)# fareedportfolio.com
