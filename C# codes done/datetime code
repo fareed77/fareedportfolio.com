@@ -1,0 +1,31 @@
+using System;
+
+namespace TimeAdditionApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 1: Print the current date and time to the console
+            // DateTime.Now returns the current date and time
+            DateTime currentDateTime = DateTime.Now; 
+            Console.WriteLine("Current Date and Time: " + currentDateTime);
+
+            // Step 2: Ask the user for a number (hours to add)
+            Console.Write("Please enter a number of hours: ");
+            
+            // Read the input from the user and convert it to an integer
+            int hoursToAdd = Convert.ToInt32(Console.ReadLine());
+
+            // Step 3: Calculate the new date and time by adding the entered number of hours
+            // We use the AddHours method to add hours to the current date and time
+            DateTime newDateTime = currentDateTime.AddHours(hoursToAdd);
+
+            // Print the new date and time after adding the hours
+            Console.WriteLine($"The new date and time after adding {hoursToAdd} hours is: {newDateTime}");
+
+            // Keep the console window open until the user presses a key
+            Console.ReadLine();
+        }
+    }
+}
