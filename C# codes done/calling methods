@@ -1,0 +1,66 @@
+using System;
+
+namespace MathOperationsApp
+{
+    // Define a class that contains methods to perform math operations
+    public class MathOperations
+    {
+        // Method 1: Adds 10 to the input number
+        public int AddTen(int number)
+        {
+            return number + 10; // Add 10 to the input number and return it
+        }
+
+        // Method 2: Multiplies the input number by 2
+        public int MultiplyByTwo(int number)
+        {
+            return number * 2; // Multiply the input number by 2 and return it
+        }
+
+        // Method 3: Subtracts 5 from the input number
+        public int SubtractFive(int number)
+        {
+            return number - 5; // Subtract 5 from the input number and return it
+        }
+    }
+}
+
+using System;
+
+namespace MathOperationsApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instantiate the MathOperations class
+            MathOperations mathOperations = new MathOperations();
+
+            // Ask the user for an input number
+            Console.WriteLine("Enter a number to perform math operations on: ");
+            int userInput;
+
+            // Validate the user input and parse it to an integer
+            while (!int.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer: ");
+            }
+
+            // Call the first method and display the result
+            int result1 = mathOperations.AddTen(userInput);
+            Console.WriteLine($"Result after adding 10: {result1}");
+
+            // Call the second method and display the result
+            int result2 = mathOperations.MultiplyByTwo(userInput);
+            Console.WriteLine($"Result after multiplying by 2: {result2}");
+
+            // Call the third method and display the result
+            int result3 = mathOperations.SubtractFive(userInput);
+            Console.WriteLine($"Result after subtracting 5: {result3}");
+
+            // Pause the console to keep it open
+            Console.WriteLine("\nPress Enter to exit...");
+            Console.ReadLine();
+        }
+    }
+}
