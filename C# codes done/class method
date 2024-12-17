@@ -1,0 +1,56 @@
+using System;
+
+namespace MathMethodApp
+{
+    public class MathOperations
+    {
+        // Method: Takes two integers as parameters, with the second parameter being optional
+        // Performs addition if two integers are provided, or multiplication if only one integer is provided
+        public int PerformOperation(int num1, int num2 = 5)
+        {
+            // Adds the two integers if both are provided, or multiplies num1 by num2 (default is 5)
+            return num1 + num2; // Change this line for different operations (e.g., num1 * num2 for multiplication)
+        }
+    }
+}
+
+using System;
+
+namespace MathMethodApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instantiate the MathOperations class
+            MathOperations mathOperations = new MathOperations();
+
+            // Ask the user to input the first number
+            Console.WriteLine("Enter the first number: ");
+            int num1 = int.Parse(Console.ReadLine()); // Get the first integer from the user
+
+            // Ask the user if they want to input a second number or leave it blank
+            Console.WriteLine("Enter the second number (or press Enter to skip): ");
+            string input = Console.ReadLine(); // Get the second number input
+
+            // Check if the second number was entered; if not, default to 5
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                // Call the method with only one argument, using the default for num2
+                int result = mathOperations.PerformOperation(num1);
+                Console.WriteLine($"Result (only one number provided): {result}");
+            }
+            else
+            {
+                // Convert the second input to an integer and call the method with two arguments
+                int num2 = int.Parse(input);
+                int result = mathOperations.PerformOperation(num1, num2);
+                Console.WriteLine($"Result (both numbers provided): {result}");
+            }
+
+            // Wait for the user to press Enter before exiting
+            Console.WriteLine("\nPress Enter to exit...");
+            Console.ReadLine();
+        }
+    }
+}
