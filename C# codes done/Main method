@@ -1,0 +1,74 @@
+using System;
+
+namespace MathOperationsApp
+{
+    public class MathOperations
+    {
+        // Method 1: Accepts an integer, performs addition and returns the result
+        public int PerformOperation(int number)
+        {
+            return number + 10; // Adds 10 to the input number and returns the result
+        }
+
+        // Method 2: Accepts a decimal, performs multiplication and returns the result
+        public int PerformOperation(decimal number)
+        {
+            return (int)(number * 2.5m); // Multiplies the input decimal by 2.5, converts it to an integer and returns
+        }
+
+        // Method 3: Accepts a string, converts it to an integer, performs subtraction and returns the result
+        public int PerformOperation(string number)
+        {
+            if (int.TryParse(number, out int result))
+            {
+                return result - 5; // If the string is a valid integer, subtracts 5 and returns the result
+            }
+            else
+            {
+                return 0; // Returns 0 if the string cannot be converted to an integer
+            }
+        }
+    }
+}
+
+using System;
+
+namespace MathOperationsApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instantiate the MathOperations class
+            MathOperations mathOperations = new MathOperations();
+
+            // Ask the user for an integer input
+            Console.WriteLine("Enter an integer to perform math operation: ");
+            int intInput = int.Parse(Console.ReadLine()); // Get integer input from user
+
+            // Call the first method for integer input and display the result
+            int result1 = mathOperations.PerformOperation(intInput);
+            Console.WriteLine($"Result of adding 10 to the integer: {result1}");
+
+            // Ask the user for a decimal input
+            Console.WriteLine("\nEnter a decimal to perform math operation: ");
+            decimal decimalInput = decimal.Parse(Console.ReadLine()); // Get decimal input from user
+
+            // Call the second method for decimal input and display the result
+            int result2 = mathOperations.PerformOperation(decimalInput);
+            Console.WriteLine($"Result of multiplying the decimal by 2.5: {result2}");
+
+            // Ask the user for a string input
+            Console.WriteLine("\nEnter a string that can be converted to an integer: ");
+            string stringInput = Console.ReadLine(); // Get string input from user
+
+            // Call the third method for string input and display the result
+            int result3 = mathOperations.PerformOperation(stringInput);
+            Console.WriteLine($"Result of subtracting 5 from the integer: {result3}");
+
+            // Wait for the user to press Enter before exiting
+            Console.WriteLine("\nPress Enter to exit...");
+            Console.ReadLine();
+        }
+    }
+}
