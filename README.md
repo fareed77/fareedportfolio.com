@@ -6,9 +6,8 @@ This repository contains the work completed during my C# programming course. The
 
 1. **Main Method assignment:** 
    - This code was done in C# and includes techs like creating a class defining it and putting it in a console app.
-   - **Description:** A simple to-do list application to manage tasks. Users can create, update, and delete tasks.
-   - **Challenges:** Implemented CRUD operations and data persistence with a database.
-   - **GitHub Repo:** [Link to Repo](#)
+   - Making a class and putting three methods in it that perform math operations in integers, decimals and strings. When it completes it the operation will show the math results. The code is structured in a way that it handles different types of inputs and gives the correct result for each. The comments in the code explain what each part does, making it easy to understand and modify.
+   - **GitHub Repo:** [(https://github.com/fareed77/The-Tech-Academy-Basic-C-Sharp-Projects/blob/273ffb1125f21bfc675308dda76368fe20453ec6/Main%20method)](#)
 
 2. **Project Name:** (e.g., Calculator App)
    - **Technologies Used:** C#, Windows Forms
