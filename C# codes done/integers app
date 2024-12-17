@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Create a list of integers
+        List<int> numbers = new List<int> { 10, 20, 30, 40, 50 };
+        
+        // Ask the user for a number to divide each number in the list by
+        Console.WriteLine("Please enter a number to divide each number in the list by:");
+        string userInput = Console.ReadLine();
+        
+        try
+        {
+            // Try to convert the user's input to an integer
+            int divisor = int.Parse(userInput);
+
+            // Loop through each integer in the list
+            foreach (int num in numbers)
+            {
+                // Divide the number by the user's input and display the result
+                double result = (double)num / divisor;
+                Console.WriteLine($"{num} divided by {divisor} is {result}");
+            }
+        }
+        catch (DivideByZeroException ex)
+        {
+            // Handle division by zero
+            Console.WriteLine("Error: You cannot divide by zero. Please enter a non-zero number.");
+        }
+        catch (FormatException ex)
+        {
+            // Handle non-numeric input (string input)
+            Console.WriteLine("Error: Invalid input. Please enter a valid number.");
+        }
+        catch (Exception ex)
+        {
+            // Catch any other unexpected errors
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+        
+        // Code below the try/catch block that executes regardless of any errors
+        Console.WriteLine("\nProgram has emerged from the try/catch block and continues execution.");
+    }
+}
