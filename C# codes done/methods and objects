@@ -1,0 +1,43 @@
+using System;
+
+namespace PersonEmployeeApp
+{
+    // Create the Person class with two properties: FirstName and LastName
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        // Method to print the full name in the format: Name: [full name]
+        public void SayName()
+        {
+            Console.WriteLine($"Name: {FirstName} {LastName}");
+        }
+    }
+
+    // Create the Employee class that inherits from Person
+    public class Employee : Person
+    {
+        public int Id { get; set; }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instantiate and initialize an Employee object with a first name and last name
+            Employee employee = new Employee
+            {
+                FirstName = "Sample",  // Set the FirstName property
+                LastName = "Student",  // Set the LastName property
+                Id = 1                 // Set the Id property (example value)
+            };
+
+            // Call the SayName method from the Person class using the Employee object
+            employee.SayName();
+
+            // End of program
+            Console.ReadLine();
+        }
+    }
+}
